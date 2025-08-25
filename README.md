@@ -73,14 +73,6 @@ An interactive web-based flashcard application for studying Complex Analysis con
 - **State Management**: React hooks for progress tracking and user preferences
 - **Local Storage**: Persistent progress tracking across browser sessions
 
-### Mathematical Content
-All mathematical expressions use LaTeX syntax and are rendered by MathJax:
-- Inline math: `$expression$`
-- Display math: `$$expression$$`
-- Custom macros: `\defeq` for definitions, `\textit{}` for emphasis
-- Full support for complex expressions, Greek letters, and mathematical symbols
-- Proper rendering of numbered lists and bullet points within mathematical content
-
 ## File Structure
 ```
 Complex Analysis Flashcards/
@@ -101,24 +93,17 @@ Complex Analysis Flashcards/
 - **Univalent Function Theory**: Coefficient bounds, extremal problems
 - **Riemann Surfaces**: Topology, meromorphic functions, Riemann-Roch theorem
 
-### Proof Techniques
-- Complete proofs for key theorems (Argument Principle, Weierstrass convergence)
-- Detailed proof sketches with key insights highlighted
-- Step-by-step derivations of important formulas
-
 ## Contributing
 
 This is a personal study tool, but suggestions for improvements are welcome:
 
 1. Additional flashcard content
 2. UI/UX enhancements
-3. Performance optimizations
-4. Bug fixes
-5. Additional proof details
+3. Bug fixes
 
 ## License
 
-This project is created for educational purposes. Mathematical content is based on standard Complex Analysis textbooks and qualifying exam materials.
+This project is created for educational purposes and licensed under Apache License 2.0. 
 
 ---
 
