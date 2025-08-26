@@ -1545,21 +1545,14 @@
                                 ),
                                 React.createElement('button', {
                                     onClick: () => setShowProgress(!showProgress),
-                                    className: `flex items-center gap-2 px-3 py-1 ${themeClasses.button.secondary} rounded-lg text-sm ${themeClasses.text.primary}`
+                                    className: `flex items-center gap-2 px-3 py-1 ${themeClasses.button.secondary} rounded-lg text-sm`
                                 },
-                                    React.createElement('span', null, '📊'),
-                                    `${correct}/${total}`
+                                    React.createElement(showProgress ? EyeOff : Eye, { size: 16 }),
+                                    "Progress"
                                 )
                             )
                         ),
 
-                        // Progress Bar
-                        total > 0 && React.createElement('div', { className: `w-full ${themeClasses.progressBar} rounded-full h-2 mb-4` },
-                            React.createElement('div', {
-                                className: `${themeClasses.progressFill} h-2 rounded-full transition-all duration-300`,
-                                style: { width: `${(correct / total) * 100}%` }
-                            })
-                        )
                     ),
 
                     // Main Flashcard
@@ -1651,6 +1644,14 @@
                         )
                     ),
 
+                    // Progress Bar (position in deck)
+                    React.createElement('div', { className: `w-full ${themeClasses.progressBar} rounded-full h-2 mt-6` },
+                        React.createElement('div', {
+                            className: `${themeClasses.progressFill} h-2 rounded-full transition-all duration-300`,
+                            style: { width: `${((currentIndex + 1) / filteredCards.length) * 100}%` }
+                        })
+                    ),
+
                     // Deck completed message
                     deckCompleted && React.createElement('div', { className: `text-center ${themeClasses.text.primary}` },
                         React.createElement('h3', { className: "text-2xl font-bold mb-4" }, "🎉 Deck Complete! 🎉"),
@@ -1686,29 +1687,10 @@
                         )
                     ),
 
-                    // Progress details (when expanded)
-                    showProgress && React.createElement('div', { className: `${themeClasses.card} rounded-lg p-4 mt-4` },
-                        React.createElement('h3', { className: `text-lg font-bold ${themeClasses.text.primary} mb-2` }, "Progress Details"),
-                        React.createElement('div', { className: "grid grid-cols-2 md:grid-cols-3 gap-4" },
-                            Object.keys(categoryColors).map(category => {
-                                const categoryCards = flashcardsData.filter(card => 
-                                    card.category === category && selectedCategories.has(category)
-                                );
-                                const correctCount = categoryCards.filter(card => progress[card.id] === true).length;
-                                const totalCount = categoryCards.length;
-                                
-                                return React.createElement('div', { key: category, className: `${themeClasses.cardContent} rounded p-3` },
-                                    React.createElement('div', { className: `text-sm font-medium ${themeClasses.text.primary}` }, category),
-                                    React.createElement('div', { className: `text-lg font-bold ${themeClasses.text.primary}` }, 
-                                        `${correctCount}/${totalCount}`),
-                                    totalCount > 0 && React.createElement('div', { className: `w-full ${themeClasses.progressBar} rounded h-1 mt-1` },
-                                        React.createElement('div', {
-                                            className: `${themeClasses.progressFill} h-1 rounded`,
-                                            style: { width: `${(correctCount / totalCount) * 100}%` }
-                                        })
-                                    )
-                                );
-                            })
+                    // Progress stats (when toggled)
+                    showProgress && React.createElement('div', { className: `${themeClasses.card} rounded-lg p-3 mt-4` },
+                        React.createElement('div', { className: `text-center ${themeClasses.text.primary}` },
+                            `Progress: ${correct}/${total} correct${total > 0 ? ` (${Math.round((correct / total) * 100)}%)` : ''}`
                         )
                     )
                 );
