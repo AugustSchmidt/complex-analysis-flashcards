@@ -384,13 +384,13 @@
                     id: 38,
                     category: "Riemann Mapping",
                     front: "State the Riemann Mapping Theorem.",
-                    back: "A **simply connected** Riemann surface is isomorphic to exactly one of either $\\mathbb{C}$, $\\widehat{\\mathbb{C}}$, or $\\mathbb{H}$."
+                    back: "A **simply connected** Riemann surface is isomorphic to exactly one of either $\\mathbb{C}$, $\\widehat{\\mathbb{C}}$, or $\\mathbb{H}$.\\n\\n**Normalization**: If $U \\neq \\mathbb{C}$ is a simply connected domain and $a \\in U$, then there is a **unique** bi-holomorphic conformal mapping $\\phi: U \\rightarrow \\Delta$ such that $\\phi(a) = 0$ and $\\phi'(a) > 0$."
                 },
                 {
                     id: 39,
                     category: "Riemann Mapping",
                     front: "State the Corollary to the Riemann Mapping Theorem.",
-                    back: "If $U \\neq \\mathbb{C}$ is a simply connected domain and $a \\in U$, then there is a **unique** bi-holomorphic conformal mapping $\\phi: U \\rightarrow \\Delta$ such that $\\phi(a) = 0$ and $\\phi'(a) > 0$.\\n\\n**Proof**: By the Riemann Mapping Theorem, $U$ is isomorphic to one of $\\mathbb{C}$, $\\widehat{\\mathbb{C}}$, or $\\mathbb{H}$. Since $U \\neq \\mathbb{C}$ and $U \\subset \\mathbb{C}$, we have $U \\not\\simeq \\mathbb{C}$ and $U \\not\\simeq \\widehat{\\mathbb{C}}$. Therefore $U \\simeq \\mathbb{H} \\simeq \\Delta$."
+                    back: "If $U \\subset \\mathbb{C}$ is a **simply connected open set** which is **not the whole plane**, then $U$ is **biholomorphically equivalent** to the **unit disc** $\\Delta$.\\n\\n**Proof**: By the Riemann Mapping Theorem, $U$ is isomorphic to one of $\\mathbb{C}$, $\\widehat{\\mathbb{C}}$, or $\\mathbb{H}$. Since $U \\neq \\mathbb{C}$ and $U \\subset \\mathbb{C}$, we have $U \\not\\simeq \\mathbb{C}$ and $U \\not\\simeq \\widehat{\\mathbb{C}}$. Therefore $U \\simeq \\mathbb{H} \\simeq \\Delta$."
                 },
                 {
                     id: 40,
@@ -402,7 +402,7 @@
                     id: 41,
                     category: "Riemann Mapping",
                     front: "State the automorphism groups of Riemann surfaces.",
-                    back: "• $\\text{Aut}(\\widehat{\\mathbb{C}}) = \\mathsf{Mob}^+$ (Möbius transformations)\\n\\n• $\\text{Aut}(\\mathbb{C}) = \\{f(z) = az + b : a \\neq 0, \\text{ and } a,b \\in \\mathbb{C}\\}$ (affine transformations)\\n\\n• $\\text{Aut}(\\mathbb{H}) = \\mathsf{Mob}^+(\\mathbb{H}) = \\text{PSL}_2(\\mathbb{R})$ (real Möbius transformations)\\n\\n• $\\text{Aut}(\\Delta) = \\mathsf{Mob}^+(\\Delta)$ (unit disk automorphisms)"
+                    back: "• $\\text{Aut}(\\widehat{\\mathbb{C}}) = \\mathsf{Mob}^+$ (Möbius transformations)\\n\\n• $\\text{Aut}(\\mathbb{C}) = \\{f(z) = az + b : a \\neq 0, \\text{ and } a,b \\in \\mathbb{C}\\}$ (affine transformations)\\n\\n• $\\text{Aut}(\\mathbb{H}) = \\mathsf{Mob}^+(\\mathbb{H}) = \\text{PSL}_2(\\mathbb{R})$ (real Möbius transformations)\\n\\n• $\\text{Aut}(\\Delta) = \\text{PSU}(1,1) = \\{A\\in \\text{SL}(2,\\mathbb{C}) \\mid \\overline{A}^t Q A = Q\\}/\\{\\pm I\\}$ where $Q(z_1, z_2) = |z_1|^2-|z_2|^2$\\n\\n**Alternative description**: Every element of $\\text{Aut}(\\Delta)$ is given by $\\phi_a(z) = \\frac{z-a}{1-z\\overline{a}}$ for $a\\in \\Delta$.\\n\\n**Proof sketch**: If $\\phi \\in \\text{Aut}(\\Delta)$ with $\\phi(0) = a$, then $\\phi_a^{-1} \\circ \\phi$ fixes $0$. By Schwarz lemma, if $f: \\Delta \\to \\Delta$ is analytic with $f(0) = 0$, then $|f'(0)| \\leq 1$ with equality iff $f(z) = e^{i\\theta} z$. Since $\\phi_a^{-1} \\circ \\phi$ and its inverse are both disk automorphisms fixing $0$, we get $\\phi_a^{-1} \\circ \\phi(z) = e^{i\\theta} z$, so $\\phi(z) = \\phi_a(e^{i\\theta} z)$."
                 },
                 {
                     id: 42,
@@ -661,6 +661,13 @@
                 const currentCard = isShuffled && shuffledIndices.length > 0 
                     ? filteredCards[shuffledIndices[currentIndex]] 
                     : filteredCards[currentIndex];
+                
+                // Create a defensive copy of the current card to prevent any reference issues
+                const safeCurrentCard = currentCard ? {
+                    ...currentCard,
+                    front: String(currentCard.front || ''),
+                    back: String(currentCard.back || '')
+                } : null;
 
                 const nextCard = () => {
                     if (currentIndex < filteredCards.length - 1) {
@@ -728,10 +735,10 @@
                 };
 
                 const markCard = (correct) => {
-                    if (currentCard) {
+                    if (safeCurrentCard) {
                         setProgress(prev => ({
                             ...prev,
-                            [currentCard.id]: correct
+                            [safeCurrentCard.id]: correct
                         }));
                     }
                 };
@@ -906,10 +913,22 @@
                 const formatText = (text) => {
                     if (!text) return '';
                     
+                    // SPECIAL HANDLING for card 8 to prevent text accumulation bug
+                    // Card 8 contains: "What are the charts for the Riemann sphere $\\widehat{\\mathbb{C}}$? How is differentiability defined at $\\infty$"
+                    if (typeof text === 'string' && text.includes('\\widehat{\\mathbb{C}}') && text.includes('differentiability defined at')) {
+                        // For card 8, use the simplest possible text processing
+                        const simpleText = text.replace(/\\n/g, '\n');
+                        return simpleText.split('\n').map((line, index) => 
+                            React.createElement('div', { key: `card8-line-${index}` }, line.trim() || '\u00A0')
+                        );
+                    }
+                    
+                    // Create a defensive copy to avoid any reference issues
+                    const textCopy = String(text);
                     
                     // Convert \\n to actual newlines, but be careful not to break LaTeX commands
                     // Only replace \\n when it's NOT followed by a letter (to avoid breaking \\nu, \\nabla, etc.)
-                    const processedText = text.replace(/\\n(?![a-zA-Z])/g, '\n');
+                    const processedText = textCopy.replace(/\\n(?![a-zA-Z])/g, '\n');
                     
                     // Split by lines but preserve display math blocks
                     const lines = [];
@@ -1461,7 +1480,7 @@
                     );
                 }
 
-                if (!currentCard) {
+                if (!safeCurrentCard) {
                     return React.createElement('div', { className: `max-w-4xl mx-auto p-6 min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}` },
                         React.createElement('div', { className: "text-center" },
                             React.createElement('h1', { className: `text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-800'} mb-4` }, 
@@ -1585,11 +1604,11 @@
                             // Category badge
                             React.createElement('div', { className: "flex justify-between items-center mb-4" },
                                 React.createElement('div', {
-                                    className: `px-3 py-1 rounded-full text-sm font-medium ${categoryColors[currentCard.category]}`
-                                }, currentCard.category),
+                                    className: `px-3 py-1 rounded-full text-sm font-medium ${categoryColors[safeCurrentCard.category]}`
+                                }, safeCurrentCard.category),
                                 React.createElement('div', { className: "flex gap-2" },
-                                    progress[currentCard.id] === true && React.createElement('div', { className: `w-6 h-6 rounded-full ${themeClasses.button.greenActive} flex items-center justify-center text-white text-sm` }, '✓'),
-                                    progress[currentCard.id] === false && React.createElement('div', { className: `w-6 h-6 rounded-full ${themeClasses.button.redActive} flex items-center justify-center text-white text-sm` }, '✗')
+                                    progress[safeCurrentCard.id] === true && React.createElement('div', { className: `w-6 h-6 rounded-full ${themeClasses.button.greenActive} flex items-center justify-center text-white text-sm` }, '✓'),
+                                    progress[safeCurrentCard.id] === false && React.createElement('div', { className: `w-6 h-6 rounded-full ${themeClasses.button.redActive} flex items-center justify-center text-white text-sm` }, '✗')
                                 )
                             ),
                             
@@ -1598,7 +1617,7 @@
                                 React.createElement('h2', { className: `text-xl font-semibold ${themeClasses.text.primary} mb-4` }, 
                                     "Question:"),
                                 React.createElement('div', { className: `${themeClasses.text.primary} text-lg leading-relaxed` },
-                                    formatText(currentCard.front)
+                                    formatText(safeCurrentCard.front)
                                 )
                             ),
 
@@ -1607,7 +1626,7 @@
                                 React.createElement('h2', { className: `text-xl font-semibold ${themeClasses.text.primary} mb-4` }, 
                                     "Answer:"),
                                 !hideAnswerText && React.createElement('div', { className: `${themeClasses.text.primary} text-lg leading-relaxed` },
-                                    formatText(currentCard.back)
+                                    formatText(safeCurrentCard.back)
                                 ),
                                 hideAnswerText && React.createElement('div', { className: `${themeClasses.text.secondary} text-center py-8 italic` },
                                     "Answer is hidden. Click 'Show' to reveal it."
@@ -1647,11 +1666,11 @@
                                             ),
                                             React.createElement('button', {
                                                 onClick: () => markCard(false),
-                                                className: `px-4 py-2 ${progress[currentCard.id] === false ? themeClasses.button.redActive : themeClasses.button.red} ${isDarkMode ? 'text-red-300' : 'text-red-600'} rounded-lg transition-colors`
+                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === false ? themeClasses.button.redActive : themeClasses.button.red} ${isDarkMode ? 'text-red-300' : 'text-red-600'} rounded-lg transition-colors`
                                             }, "Incorrect"),
                                             React.createElement('button', {
                                                 onClick: () => markCard(true),
-                                                className: `px-4 py-2 ${progress[currentCard.id] === true ? themeClasses.button.greenActive : themeClasses.button.green} ${isDarkMode ? 'text-green-300' : 'text-green-600'} rounded-lg transition-colors`
+                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === true ? themeClasses.button.greenActive : themeClasses.button.green} ${isDarkMode ? 'text-green-300' : 'text-green-600'} rounded-lg transition-colors`
                                             }, "Correct")
                                         )
                                 ),
