@@ -169,7 +169,7 @@
                 {
                     id: 3,
                     category: "Basics",
-                    front: "State the equivalence conditions for analyticity (Cauchy-Riemann).",
+                    front: "State the equivalent conditions for analyticity (Cauchy-Riemann).",
                     back: "If we write $z=x+iy$, then we can express $f(z)=u(x,y)+iv(x,y)$ for some real valued $u,v\\colon U\\rightarrow \\mathbb{R}$.\\n\\n The following are equivalent:\\n\\n1. $f$ is analytic\\n\\n2. $f$ satisfies the **Cauchy-Riemann equations**: $$u_x = v_y \\text{ and } u_y=-v_x$$\\n\\n3. $\\frac{\\partial f}{\\partial \\bar{z}}=0$"
                 },
                 {
@@ -193,47 +193,53 @@
                 {
                     id: 7,
                     category: "Basics",
-                    front: "Define Riemann surfaces and the extended complex plane.",
-                    back: "• A **Riemann surface** is a Hausdorff complex $1$-manifold\\n\\n• $\\widehat{\\mathbb{C}} \\defeq \\mathbb{C} \\cup \\{\\infty\\}$ has the structure of a Riemann surface with an atlas of two charts: $(\\mathbb{C}, z)$ and $(\\mathbb{C}\\setminus \\{0\\} , 1/z)$\\n\\n• We say that $f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}}$ is differentiable at $\\infty$ if $f(1/z)$ is differentiable at $0$\\n\\n• We say that $f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}}$ is differentiable at $z$ where $f(z)=\\infty$ when $1/f(z)$ is differentiable at $z$"
+                    front: "Define a Riemann surface.",
+                    back: "A **Riemann surface** is a Hausdorff complex $1$-manifold."
                 },
                 {
                     id: 8,
+                    category: "Basics",
+                    front: "What are the charts for the Riemann sphere $\\widehat{\\mathbb{C}}$? How is differentiability defined at $\\infty$ and at points where $f(z) = \\infty$?",
+                    back: "• $\\widehat{\\mathbb{C}} \\defeq \\mathbb{C} \\cup \\{\\infty\\}$ has the structure of a Riemann surface with an atlas of two charts: $(\\mathbb{C}, z)$ and $(\\mathbb{C}\\setminus \\{0\\} , 1/z)$\\n\\n• We say that $f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}}$ is **differentiable at $\\infty$** if $f(1/z)$ is differentiable at $0$\\n\\n• We say that $f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}}$ is **differentiable at $z$ where $f(z)=\\infty$** when $1/f(z)$ is differentiable at $z$"
+                },
+                {
+                    id: 9,
                     category: "Basics",
                     front: "Define Möbius transformations.",
                     back: "• $\\mathsf{Mob}^+ \\defeq \\left\\{f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}} \\; |\\;  f(z) = \\frac{az+b}{cz+d} \\; \\text{for } ad-bc\\neq 0\\right\\}$\\n\\n• $\\mathsf{Mob} \\defeq \\left\\{f\\colon \\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}} \\; |\\;  f(z) = \\frac{az+b}{cz+d} \\; \\text{or} \\;  f(z) = \\frac{a\\bar{z}+b}{c\\bar{z}+d} \\; \\text{for } ad-bc\\neq 0\\right\\}$"
                 },
                 {
-                    id: 9,
+                    id: 10,
                     category: "Basics",
                     front: "Define extended circles and cross ratio.",
                     back: "**Extended Circles**: An extended circle in $\\widehat{\\mathbb{C}}$ is either $C\\subset \\mathbb{C}$ or $L\\cup \\{\\infty\\}$ for a circle/line (C/L) in $\\mathbb{C}$\\n\\n**Cross Ratio**: The cross ratio of a four-tuple is $$[z_1, z_2, z_3, z_4] \\defeq \\left( \\frac{z_1-z_3}{z_1-z_4}\\right) \\left( \\frac{z_2-z_4}{z_2-z_3}\\right)$$\\n\\n We observe that $T z_1 = [z_1, z_2, z_3, z_4]$ where $T\\colon (z_2, z_3, z_4) \\mapsto (1, 0, \\infty)$."
                 },
                 {
-                    id: 10,
+                    id: 11,
                     category: "Basics",
                     front: "State the uniqueness theorem for Möbius transformations.",
                     back: "Given $(z_1, z_2, z_3), (w_1, w_2, w_3)\\in \\widehat{\\mathbb{C}}$, there is a **unique** $T\\in \\mathsf{Mob}^+$ such that $T(z_i)=w_i, \\forall i$."
                 },
                 {
-                    id: 11,
+                    id: 12,
                     category: "Basics",
                     front: "State the classification of Möbius transformations.",
                     back: "Every Möbius transformation is conjugate to exactly one of the following:\\n\\n• **Elliptic**: $S(z) = e^{i\\theta} z$\\n\\n• **Hyperbolic**: $S(z) =\\lambda z$ for $|\\lambda|>1$\\n\\n• **Parabolic**: $S(z) = z+1$"
                 },
                 {
-                    id: 12,
+                    id: 13,
                     category: "Basics",
                     front: "State the derivative formula for Möbius transformations.",
                     back: "For $f(z)=\\frac{az+b}{cz+d}$, we have $$f'(z) = \\frac{ad-bc}{(cz+d)^2}$$"
                 },
                 {
-                    id: 13,
+                    id: 14,
                     category: "Basics",
                     front: "State key properties of Möbius transformations.",
                     back: "• The equation of an extended circle is given by $a|z|^2+\\Re(bz) + c=0$ for $a,c\\in \\mathbb{R}$ and $b\\in \\mathbb{C}$\\n\\n• Let $T\\in \\mathsf{Mob}^+$. Then $T$ sends extended circles to extended circles\\n\\n• Any $T\\in \\mathsf{Mob}^+$ is a composition of:\\n  - $f(z) = z+a$ (Translation)\\n  - $1/z$ (Inversion)\\n  - $g(z) = \\lambda z$ (Dilation)"
                 },
                 {
-                    id: 14,
+                    id: 15,
                     category: "Basics",
                     front: "State the cross ratio invariance property.",
                     back: "For $S\\in \\mathsf{Mob}^+$, we have $$[z_1, z_2, z_3, z_4]  = [Sz_1, Sz_2, Sz_3, Sz_4]$$\\n\\n This means **cross ratios are preserved** under Möbius transformations."
@@ -241,109 +247,109 @@
 
                 // Section 2: Integration
                 {
-                    id: 15,
+                    id: 16,
                     category: "Integration",
                     front: "Define line integrals for complex functions.",
                     back: "• Let $f\\colon [a,b]\\rightarrow \\mathbb{C}$ be given by $f(t) = u(t) + i v(t)$. Then $$\\int_a^b f(t) dt \\defeq \\int_a^b u(t) dt + i \\int_a^b v(t) dt$$\\n\\n• Let $\\gamma\\colon [a,b]\\rightarrow \\mathbb{C}$ be a piecewise differentiable curve and $f\\colon \\gamma([a,b]) \\rightarrow \\mathbb{C}$ be continuous. Then $$\\int_\\gamma f(z) dz \\defeq \\int_a^b f(\\gamma(t)) \\gamma'(t) dt$$"
                 },
                 {
-                    id: 16,
+                    id: 17,
                     category: "Integration",
                     front: "Define the winding number.",
                     back: "Given a closed (piecewise smooth) curve $\\gamma$ and a point $p\\in \\mathbb{C}\\setminus \\gamma$, we define the **winding number** of $\\gamma$ around $p$ as $$n(\\gamma, p) \\defeq \\frac{1}{2\\pi i}\\int_\\gamma \\frac{1}{z-p} dz$$\\n\\n**Note**: $-n(\\gamma, p)= n(-\\gamma, p)$."
                 },
                 {
-                    id: 17,
+                    id: 18,
                     category: "Integration",
                     front: "Define isolated singularities and their classification.",
                     back: "If $f$ is analytic on $U-\\{p\\}$, then we obtain a **Laurent expansion** at $p$ $$f(z) = \\sum_{n=-\\infty}^\\infty a_n(z-p)^n$$ and we call $p$ an **isolated singularity**.\\n\\n**Classification** by $\\text{ord}(f,p)= \\inf\\{n\\in \\mathbb{Z} \\colon a_n\\neq 0\\}$:\\n\\n• If $\\text{ord}(f,p) =-n< 0$: **pole of order** $n$\\n• If $\\text{ord}(f,p) = n\\geq 0$: **removable singularity** and zero of order $n$\\n• If $\\text{ord}(f,p)=-\\infty$: **essential singularity**"
                 },
                 {
-                    id: 18,
+                    id: 19,
                     category: "Integration",
                     front: "Define meromorphic functions and residues.",
                     back: "• A function $f\\colon U\\to \\mathbb{C}$ is **meromorphic** if it is holomorphic on all of $U$ except for a set of isolated points, which are poles of the function.\\n\\n• If $p$ is an isolated singularity of $f\\colon U\\to \\mathbb{C}$, we define $$\\text{Res}(f, p)\\defeq a_{-1}$$ where $f(z) = \\sum_{n=-\\infty}^\\infty a_n(z-p)^n$ is the Laurent series expansion around $p$."
                 },
                 {
-                    id: 19,
+                    id: 20,
                     category: "Integration",
                     front: "State Cauchy's Theorem.",
                     back: "Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic. Then:\\n\\n• Let $T\\subseteq U$ be a triangle: $\\int_{\\partial T} f(z) dz =0$\\n\\n• Let $P\\subseteq U$ be a polygon: $\\int_{\\partial P} f(z) dz = 0$\\n\\n• Let $V\\subseteq \\mathbb{C}$ be open such that $\\overline{V}\\subseteq U$ is compact and $\\partial V$ is piecewise smooth: $$\\int_{\\partial V}f(z) dz = 0$$\\n\\n• **General form**: Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic, and $\\gamma$ a cycle which is null-homologous in $U$. Then $$\\int_\\gamma f(z) dz =0$$"
                 },
                 {
-                    id: 20,
+                    id: 21,
                     category: "Integration",
                     front: "State Cauchy's Integral Formula.",
                     back: "A holomorphic function defined on a disk is completely determined by its values on the boundary of the disk.\\n\\n Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic with $\\overline{B(a, R)}\\subseteq U$. Then for $z\\in B(a, R)$: $$f(z) = \\frac{1}{2\\pi i} \\int_{C(a,R)} \\frac{f(w)}{w-z} dw$$"
                 },
                 {
-                    id: 21,
+                    id: 22,
                     category: "Integration",
                     front: "State Liouville's Theorem.",
                     back: "If $f$ is a **bounded entire function**, then $f$ is **constant**.\\n\\n More generally, if $f$ is entire and $|f(z)| \\leq A +B|z|^n$, then $f$ is a polynomial of degree at most $n$."
                 },
                 {
-                    id: 22,
+                    id: 23,
                     category: "Integration",
                     front: "State the Identity Theorem.",
                     back: "Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic on $U$ connected. Then **TFAE**:\\n\\n1. $f\\equiv 0$\\n\\n2. $Z(f)$ has an accumulation point\\n\\n3. For some $a\\in U$, $f^{(n)}(a)=0, \\forall n$"
                 },
                 {
-                    id: 23,
+                    id: 24,
                     category: "Integration",
                     front: "State the Maximum Modulus Principle.",
                     back: "Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic and $U$ connected. If $f$ achieves its **maximum modulus** in $U$, then $f$ is **constant**.\\n\\n**Proof idea**: If $|f(z)|$ achieves its maximum at $a\\in U$, then by the mean value property, $f(a)$ equals the average of $f$ over small circles centered at $a$. This forces $f$ to be constant in a neighborhood of $a$, and by connectedness, everywhere."
                 },
                 {
-                    id: 24,
+                    id: 25,
                     category: "Integration",
                     front: "State Morera's Theorem.",
                     back: "If $f\\colon U\\rightarrow \\mathbb{C}$ is **continuous** and $\\int_\\gamma f(z)dz=0$ for all closed curves $\\gamma$ in $U$, then $f$ is **analytic**.\\n\\n**Proof idea**: Define $F(z) = \\int_{\\gamma_z} f(w)dw$ where $\\gamma_z$ is a path from a fixed point to $z$. The hypothesis ensures $F$ is well-defined, and by FTC, $F'(z) = f(z)$, so $f$ is holomorphic."
                 },
                 {
-                    id: 25,
+                    id: 26,
                     category: "Integration",
                     front: "State Weierstrass' Theorem on uniform convergence of analytic functions.",
                     back: "If $f_n\\colon U\\rightarrow \\mathbb{C}$ are **analytic** and **uniformly convergent to $f$ on compact subsets**, then $f\\colon U\\rightarrow \\mathbb{C}$ is **analytic**.\\n\\n**Proof**: By uniform convergence, $f$ is continuous. For a closed curve $\\gamma \\in U$: $$\\int_\\gamma f(z) dz = \\int_\\gamma \\lim_{n\\rightarrow \\infty} f_n(z)dz = \\lim_{n\\rightarrow \\infty} \\int_\\gamma f_n(z) dz = \\lim_{n\\rightarrow \\infty} 0 = 0$$\\n\\n Thus, $f$ is analytic by **Morera's Theorem**."
                 },
                 {
-                    id: 26,
+                    id: 27,
                     category: "Integration",
                     front: "State the Laurent Series Theorem.",
                     back: "Let $f\\colon U\\rightarrow \\mathbb{C}$ be analytic with $\\overline{A(a, r, R)} \\subseteq U$. Then on $A(a, r, R)$: $$f(z) = \\sum_{n=-\\infty}^\\infty a_n(z-a)^n = \\underbrace{\\sum_{n=1}^\\infty \\frac{b_n}{(z-a)^n}}_{\\text{singular part}} + \\underbrace{\\sum_{n=0}^\\infty a_n(z-a)^n}_{\\text{regular part}}$$\\n\\n The series is absolutely convergent in $A(a,r,R)$ and uniformly convergent on compact subsets.\\n\\n**Coefficients**: $$a_n = \\frac{1}{2\\pi i} \\int_{\\gamma} \\frac{f(w)}{(w-a)^{n+1}} dw$$"
                 },
                 {
-                    id: 27,
+                    id: 28,
                     category: "Integration",
                     front: "State the Residue Theorem.",
                     back: "Let $f\\colon U\\to \\mathbb{C}$ be analytic on $U$ outside of a finite set $\\{z_i\\}_{i=1}^m$ and $\\gamma$ a closed nullhomotopic path in $U$ which does not contain any of the $z_i$. Then $$\\int_\\gamma f(z) dz = 2\\pi i \\sum_{i=1}^m n(\\gamma, z_i) \\cdot \\text{Res}(f, z_i)$$\\n\\n Furthermore, if $\\overline{V}\\subseteq U$ and $\\partial V$ does not contain any $z_i$: $$\\int_{\\partial V} f(z) dz = 2\\pi i \\sum_{z_i\\in V} \\text{Res}(f, z_i)$$"
                 },
                 {
-                    id: 28,
+                    id: 29,
                     category: "Integration",
                     front: "State the Argument Principle.",
                     back: "Let $f\\colon U\\to \\mathbb{C}$ be meromorphic and $\\gamma$ a curve not containing any zeros or poles of $f$ that is nullhomotopic in $U$. Then $$\\sum_{p\\in U} n(\\gamma, p) \\text{ord}(f, p) = \\frac{1}{2\\pi i} \\int_\\gamma \\frac{f'(z)}{f(z)} dz$$\\n\\n**Note**: $\\text{Res}(f'/f, p) = \\text{ord}(f, p)$ for poles and zeros.\\n\\n**Proof**: We notice that if $f$ has at worst a pole at $p$ (not an essential singularity), then $f'/f$ satisfies $$\\text{Res}(f'/f, p) = \\text{ord}(f, p)$$\\n\\n Now apply the **Residue Theorem**."
                 },
                 {
-                    id: 29,
+                    id: 30,
                     category: "Integration",
                     front: "State Rouché's Theorem.",
                     back: "If $f, g\\colon U\\rightarrow \\mathbb{C}$ are analytic, $\\overline{V}\\subseteq U$, and $|g(z)| < |f(z)|$ on $\\partial V$, then $f$ and $f+g$ have the **same number of zeros** in $V$ (counted with multiplicity).\\n\\n**Proof idea**: Since $|f|> |g|$ on $\\partial V$, for $t\\in [0, 1]$, $|f(z)+t g(z)|\\geq |f|-|g|>0$. By the Argument Principle, $N(f+tg, V)$ is a continuous integer-valued function on $[0,1]$, hence constant."
                 },
                 {
-                    id: 30,
+                    id: 31,
                     category: "Integration",
                     front: "State the Open Mapping Theorem.",
                     back: "Let $f\\colon U\\to \\mathbb{C}$ be a **non-constant analytic function**. Then $f$ is an **open map** (maps open sets to open sets).\\n\\n**Proof idea**: Let $p\\in U$ and $f(p)=q$. Since $f$ is non-constant, $f(z)-q$ has an isolated zero at $p$. Choose a small ball $V$ around $p$ such that $f(z) \\neq q$ on $\\partial V$. Then $f(V)$ contains the component of $\\mathbb{C}\\setminus f(\\partial V)$ containing $q$, so $f(U)$ is open."
                 },
                 {
-                    id: 31,
+                    id: 32,
                     category: "Integration",
                     front: "State the Fundamental Theorem of Algebra (complex analysis proof).",
                     back: "Every non-constant polynomial has a zero in $\\mathbb{C}$. Furthermore, any polynomial can be uniquely factored into linear functions over $\\mathbb{C}$.\\n\\n**Proof**: Suppose $P$ is a non-constant polynomial with no zeros. Then $1/P$ is an entire function with $\\lim_{z\\rightarrow \\infty} 1/P(z) = 0$. So $1/P$ is an entire bounded function, hence constant by Liouville's Theorem. Therefore, $P$ is constant, contradiction."
                 },
                 {
-                    id: 32,
+                    id: 33,
                     category: "Integration",
                     front: "How do you calculate residues at poles?",
                     back: "**Simple pole**: $$\\text{Res}(f,p) = \\lim_{z\\to p}(z-p)f(z)$$\\n\\n**Simple pole from ratio**: If $f(z) = \\frac{g(z)}{h(z)}$ where $h(p) =0$ but $h'(p)\\neq 0$: $$\\text{Res}(f,p) = \\frac{g(p)}{h'(p)}$$\\n\\n**Pole of order $n$**: $$\\text{Res}(f, p) = \\frac{1}{(n-1)!} \\left( \\frac{d^{n-1}}{dz^{n-1}} [(z-p)^n f(z)]\\right)\\bigg|_{z=p}$$"
@@ -351,55 +357,55 @@
 
                 // Section 3: Riemann Mapping
                 {
-                    id: 33,
+                    id: 34,
                     category: "Riemann Mapping",
                     front: "State the Schwarz Lemma.",
                     back: "Let $f: \\Delta \\rightarrow \\Delta$ be analytic with $f(0) = 0$. Then:\\n\\n• $|f(z)| \\leq |z|$ for all $z \\in \\Delta$\\n\\n• $|f'(0)| \\leq 1$\\n\\n**Equality case**: If equality holds for either at a nonzero point in the disc, then $f(z) = cz$ for some $|c| = 1$."
                 },
                 {
-                    id: 34,
+                    id: 35,
                     category: "Riemann Mapping",
                     front: "State the Schwarz Reflection Principle.",
                     back: "Let $U$ be open and symmetric about the $x$-axis, $U = V \\cup W \\cup A$, where $A = U \\cap \\mathbb{R}$, $V = U \\cap \\mathbb{H}$. Let $f : V \\to \\mathbb{C}$ be analytic and continuous on $V \\cup A$ with $f$ **real on $A$**. Then $f$ **extends** to an analytic function on $U$.\\n\\n**Extension**: On $W$ define $f(z) = \\overline{f(\\overline{z})}$."
                 },
                 {
-                    id: 35,
+                    id: 36,
                     category: "Riemann Mapping",
                     front: "State the Riemann Mapping Theorem.",
                     back: "A **simply connected** Riemann surface is isomorphic to exactly one of either $\\mathbb{C}$, $\\widehat{\\mathbb{C}}$, or $\\mathbb{H}$.\\n\\n**Normalization**: If $U \\neq \\mathbb{C}$ is a simply connected domain and $a \\in U$, then there is a **unique** bi-holomorphic conformal mapping $\\phi: U \\rightarrow \\Delta$ such that $\\phi(a) = 0$ and $\\phi'(a) > 0$."
                 },
                 {
-                    id: 36,
+                    id: 37,
                     category: "Riemann Mapping",
                     front: "State the characterization of proper analytic functions.",
                     back: "An analytic function $f: \\mathbb{C} \\to \\mathbb{C}$ is **proper** $\\iff$ $f(z)$ is a **non-constant polynomial**.\\n\\n**Proof**:\\n\\n**($\\Rightarrow$)** Suppose $f$ is a proper analytic function.\\n\\n• Since $f$ is analytic and proper, the preimage of any compact set is compact\\n• The set of zeros of $f$, i.e., $f^{-1}(0)$, must be compact\\n• But the zeros of a nonzero analytic function are isolated, so if there are infinitely many zeros, they must accumulate — contradicting compactness of a discrete set\\n• Hence, $f$ has only **finitely many zeros**\\n\\n Choose $R > 0$ so that all zeros of $f$ lie in $B(0, R)$. Define $$g(z) := \\frac{1}{f(1/z)}$$\\n\\n Then $g$ is analytic and nonzero on $0 < |z| < 1/R$, hence has at most a **removable singularity at 0**.\\n\\n Extend $g$ analytically to $z = 0$. Since $f$ has a zero at infinity, $g$ has a zero at 0 of some order $n$: $$g(z) = z^n h(z), \\quad \\text{with } h(0) \\neq 0$$\\n\\n Thus, $|g(z)| \\geq K |z|^n$ on $B(0, 1/R) \\setminus \\{0\\}$. Hence: $$|f(z)| = \\left| \\frac{1}{g(1/z)} \\right| \\leq \\frac{1}{K |1/z|^n} = \\frac{|z|^n}{K}, \\quad \\text{for } |z| > R$$\\n\\n This gives a **polynomial-type bound**: $|f(z)| \\leq A + B |z|^n$ for all $z$. By **Cauchy's estimate**, this implies that $f$ is a polynomial of degree at most $n$.\\n\\n**($\\Leftarrow$)** Conversely, any **nonconstant polynomial is proper**: the preimage of a compact set under a polynomial is bounded and closed (hence compact), because polynomial functions go to infinity as $|z| \\to \\infty$."
                 },
                 {
-                    id: 37,
+                    id: 38,
                     category: "Riemann Mapping",
                     front: "State the automorphism groups of Riemann surfaces.",
                     back: "• $\\text{Aut}(\\widehat{\\mathbb{C}}) = \\mathsf{Mob}^+$ (Möbius transformations)\\n\\n• $\\text{Aut}(\\mathbb{C}) = \\{f(z) = az + b : a \\neq 0, \\text{ and } a,b \\in \\mathbb{C}\\}$ (affine transformations)\\n\\n• $\\text{Aut}(\\mathbb{H}) = \\mathsf{Mob}^+(\\mathbb{H}) = \\text{PSL}_2(\\mathbb{R})$ (real Möbius transformations)\\n\\n• $\\text{Aut}(\\Delta) = \\mathsf{Mob}^+(\\Delta)$ (unit disk automorphisms)"
                 },
                 {
-                    id: 38,
+                    id: 39,
                     category: "Riemann Mapping",
                     front: "State the theorem about rational functions on the Riemann sphere.",
                     back: "Every non-constant analytic map $f: \\widehat{\\mathbb{C}} \\to \\widehat{\\mathbb{C}}$ is a **rational function**.\\n\\n**Proof**: By composing with a Möbius transformation if necessary, we may assume without loss of generality that $f(\\infty) = \\infty$.\\n\\nSince $f$ is analytic on the **compact Riemann sphere** $\\widehat{\\mathbb{C}}$, it cannot have any **essential singularities**: essential singularities are not isolated, and thus are incompatible with analyticity on a compact surface. Hence, all singularities of $f$ are **poles**.\\n\\nLet $\\{p_i\\}$ be the set of poles of $f$, and let $f_i$ be the **principal part** of the Laurent expansion of $f$ at $p_i$. Since $f$ is meromorphic on the compact sphere, $\\{p_i\\}$ must be a **finite set**; otherwise, the poles would accumulate and contradict the analyticity of $f$, forcing $f \\equiv \\infty$.\\n\\nDefine the function $$g(z) := f(z) - \\sum_i f_i(z)$$\\n\\nThen $g$ is **analytic on all of** $\\widehat{\\mathbb{C}}$, i.e., an entire function with no poles. Since $f(\\infty) = \\infty$, we see that $g(\\infty) = \\infty$, so $g$ is **proper**. Therefore, $g$ must be a **polynomial**.\\n\\nIt follows that $f = g + \\sum_i f_i$ is the sum of a polynomial and finitely many principal parts — hence a **rational function**."
                 },
                 {
-                    id: 39,
+                    id: 40,
                     category: "Riemann Mapping",
                     front: "State the Monodromy Theorem.",
                     back: "Let $z_0 \\in U$ and $(f_0, U_0)$ be a function pair which may be analytically continued along all curves in $U$. Let $\\gamma_0, \\gamma_1: [0,1] \\to U$ be two curves from $z_0$ to $z_1$ **homotopic in $U$**. Let $(f_1, D_1)$ be analytic continuation of $(f_0, D_0)$ along $\\gamma_0$. Then analytic continuation along $\\gamma_1$ is **equivalent** to $(f_1, D_1)$."
                 },
                 {
-                    id: 40,
+                    id: 41,
                     category: "Riemann Mapping",
                     front: "Define analytic covering maps and universal covers.",
                     back: "**Analytic Covering Map**: If $X$ and $Y$ are Riemann surfaces, a map $\\pi: X \\to Y$ is an analytic covering map if it is a covering map such that at each point $p \\in Y$, there is an open neighborhood $U$ such that $\\pi^{-1}(U) = \\cup U_\\alpha$ where $\\pi|_{U_\\alpha}: U_\\alpha \\to U$ is a biholomorphism.\\n\\n**Universal Cover**: Given a Riemann surface $X$, there is a universal cover $\\pi: \\tilde{X} \\to X$ such that $X = \\tilde{X}/\\Gamma$ where $\\Gamma \\subseteq \\text{Aut}(\\tilde{X})$."
                 },
                 {
-                    id: 41,
+                    id: 42,
                     category: "Riemann Mapping",
                     front: "State the classification of universal covers.",
                     back: "If $X$ is a Riemann surface with universal cover $\\mathbb{C}$, then $X = \\mathbb{C}/\\Gamma$ where:\\n\\n• $\\Gamma = \\langle z+1 \\rangle$ (cylinder/punctured plane), or\\n\\n• $\\Gamma = \\langle z+1, z+\\tau \\rangle$ for $\\tau \\in \\mathbb{H}$ (torus)"
@@ -407,55 +413,55 @@
 
                 // Section 4: Conformal Geometry
                 {
-                    id: 42,
+                    id: 43,
                     category: "Conformal Geometry",
                     front: "Define conformal metrics and geometric quantities.",
                     back: "A **conformal metric** $\\rho$ on a Riemann surface $X$ is given locally by $\\rho(z) |dz|$ where $\\rho: X \\to \\mathbb{R}_+$ is continuous.\\n\\n**Geometric Quantities**:\\n• **Length**: $L_\\rho(\\gamma) = \\int_\\gamma \\rho(z) |dz|$\\n• **Area**: $A_\\rho(U) = \\int_U \\rho^2(z) dx dy$\\n• **Pullback metric**: $f^*(\\rho)(z)|dz| = \\rho(f(z)) |f'(z)| |dz|$\\n• **Isometry**: $\\rho_1(z) = \\rho_2(f(z)) |f'(z)|$\\n• **Gaussian curvature**: $K(\\rho) \\defeq -\\frac{\\Delta(\\log \\rho)}{\\rho^2}$ where $\\Delta$ is the **Laplacian**, defined as $\\Delta(u) = u_{xx} + u_{yy}$"
                 },
                 {
-                    id: 43,
+                    id: 44,
                     category: "Conformal Geometry",
                     front: "Define the standard conformal metrics.",
                     back: "**Euclidean/Flat metric** on $\\mathbb{C}$: $\\rho(z) = |dz|$\\n\\n**Spherical metric** on $\\widehat{\\mathbb{C}}$: $\\rho_{\\widehat{\\mathbb{C}}}(z) |dz| = \\frac{2 |dz|}{1+|z|^2}$\\n\\n**Hyperbolic metric on $\\mathbb{H}$**: $\\rho_{\\mathbb{H}}(z) = \\frac{1}{\\text{Im}(z)}$ giving distance $d_\\mathbb{H}(z, w) = \\left|\\frac{z-w}{z-\\overline{w}}\\right|$\\n\\n**Hyperbolic metric on $\\Delta$**: $\\rho_{\\Delta}(z) = \\frac{2}{1 - |z|^2}$ giving distance $d_{\\Delta}(z,w) = \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$"
                 },
                 {
-                    id: 44,
+                    id: 45,
                     category: "Conformal Geometry",
                     front: "State the curvatures of the standard metrics.",
                     back: "• **Flat metric**: $K = 0$ (since $\\log \\rho = \\log 1 = 0$)\\n\\n• **Spherical metric**: $K = +1$\\n\\n• **Hyperbolic metrics**: Both $\\rho_\\mathbb{H}$ and $\\rho_\\Delta$ have Gaussian curvature $K = -1$"
                 },
                 {
-                    id: 45,
+                    id: 46,
                     category: "Conformal Geometry",
                     front: "State the Schwarz-Pick Theorem.",
                     back: "If $f: \\Omega_1 \\to \\Omega_2$ is analytic, with $\\Omega_j \\in \\{\\Delta, \\mathbb{H}\\}$, then:\\n\\n• **Distance decreasing**: $d_{\\Omega_2}(f(z), f(w)) \\leq d_{\\Omega_1}(z,w)$\\n\\n• **Differential form**: $\\rho_{\\Omega_2}(f(z)) \\cdot |f'(z)| \\leq \\rho_{\\Omega_1}(z)$\\n\\n• **Equality case**: If equality holds for some pair of distinct points (or one point with $f'(z) \\neq 0$), then $f$ is a Möbius transformation that is an isometry."
                 },
                 {
-                    id: 46,
+                    id: 47,
                     category: "Conformal Geometry",
                     front: "State the explicit Schwarz-Pick formulas for all cases.",
                     back: "From the distance decreasing property of analytic maps between hyperbolic spaces:\\n\\n**For $f\\colon \\Delta \\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{\\Im (f(z))}{\\Im z}$$\\n\\n**For $f\\colon \\Delta \\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{2\\,\\Im (f(z))}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{2\\,\\Im z}$$"
                 },
                 {
-                    id: 47,
+                    id: 48,
                     category: "Conformal Geometry",
                     front: "State the triangle area formulas for constant curvature.",
                     back: "Let $T$ be a triangle with angles $A,B,C$. Then:\\n\\n• **Spherical geometry** ($K = +1$): $\\text{area}(T) = A + B + C - \\pi$\\n\\n• **Hyperbolic geometry** ($K = -1$): $\\text{area}(T) = \\pi - (A + B + C)$\\n\\n**Note**: In Euclidean geometry ($K = 0$), $A + B + C = \\pi$."
                 },
                 {
-                    id: 48,
+                    id: 49,
                     category: "Conformal Geometry",
                     front: "State the isometry groups of standard geometries.",
                     back: "• **Euclidean**: $\\text{Iso}^+(\\mathbb{C}, \\rho) = \\{f(z) = az + b : a,b \\in \\mathbb{C}, |a| = 1\\}$\\n\\n• **Spherical**: $\\text{Iso}^+(\\widehat{\\mathbb{C}}, \\rho_{\\widehat{\\mathbb{C}}}) \\simeq \\text{PSU}(2)$\\n\\n• **Hyperbolic on $\\mathbb{H}$**: $\\text{Iso}^+(\\mathbb{H}, \\rho_\\mathbb{H}) = \\text{PSL}(2, \\mathbb{R})$\\n\\n• **Hyperbolic on $\\Delta$**: $\\text{Iso}^+(\\Delta, \\rho_\\Delta) = \\text{PSU}(1,1)$"
                 },
                 {
-                    id: 49,
+                    id: 50,
                     category: "Conformal Geometry",
                     front: "State the Little Picard Theorem.",
                     back: "An **entire function** that **misses two values** is **constant**.\\n\\n**Proof**: If $f$ misses two points $a,b$, then $f: \\mathbb{C} \\to \\mathbb{C} \\setminus \\{a,b\\}$ is analytic. Since $\\mathbb{C} \\setminus \\{a,b\\}$ is hyperbolic, lift $f$ to analytic map $\\tilde{f}: \\mathbb{C} \\to \\Delta$. Thus $\\tilde{f}$ is constant by Liouville's Theorem, so $f$ is constant."
                 },
                 {
-                    id: 50,
+                    id: 51,
                     category: "Conformal Geometry",
                     front: "State the Great Picard Theorem.",
                     back: "Let $f: U \\setminus \\{p\\} \\to \\mathbb{C}$ be analytic with an **essential singularity** at $p$. Then $f$ takes on **every value** in $\\mathbb{C}$ except possibly **1** in every neighborhood of $p$.\\n\\n This strengthens Casorati-Weierstrass: near an essential singularity, $f$ not only gets dense in $\\mathbb{C}$, but actually hits every value except at most one."
@@ -463,49 +469,49 @@
 
                 // Section 5: Univalent Maps  
                 {
-                    id: 51,
+                    id: 52,
                     category: "Univalent Maps",
                     front: "Define normal families and equicontinuity.",
                     back: "Let $C(U)$ be the set of continuous complex functions on $U\\subseteq \\mathbb{C}$.\\n\\n• A family $\\mathcal{F}\\subset C(U)$ is **equicontinuous** on $E\\subseteq U$ if given any $\\epsilon > 0$, there exists $\\delta > 0$ such that $|f(z) - f(w)| < \\epsilon$ whenever $|z-w|< \\delta$ where $z,w\\in E$.\\n\\n• A family $\\mathcal{F}$ is **normal** in $U$ if every sequence $\\{f_n\\}\\subset \\mathcal{F}$ contains a subsequence which converges uniformly on every compact subset of $U$."
                 },
                 {
-                    id: 52,
+                    id: 53,
                     category: "Univalent Maps",
                     front: "State the Arzela-Ascoli Theorem.",
                     back: "A family of continuous functions $\\mathcal{F}$ on $U$ is **normal** if and only if:\\n\\n• $\\mathcal{F}$ is **equicontinuous** on every compact subset of $U$\\n\\n• $\\mathcal{F}$ is **pointwise bounded**, i.e. given $z\\in U$, there exist a $M$ such that $|f(z)|\\leq M$ for all $f\\in \\mathcal{F}$"
                 },
                 {
-                    id: 53,
+                    id: 54,
                     category: "Univalent Maps",
                     front: "State Montel's Theorem.",
                     back: "**Conditions for normality** of analytic function families:\\n\\n• Let $\\mathcal{F}$ be a family of **meromorphic maps** on $U\\subseteq \\mathbb{C}$ which **misses three values** of $\\widehat{\\mathbb{C}}$. Then $\\mathcal{F}$ is a normal family.\\n\\n• Let $\\mathcal{F}$ be a family of **analytic functions** on $U\\subseteq \\mathbb{C}$ where each member of the family misses the same complex values $a,b\\in \\mathbb{C}$. Then $\\mathcal{F}$ is normal.\\n\\n• A family $\\mathcal{F}$ of analytic functions on $U$ is normal $\\iff$ $\\mathcal{F}$ is uniformly bounded on every compact set."
                 },
                 {
-                    id: 54,
+                    id: 55,
                     category: "Univalent Maps",
                     front: "Define univalent functions and state convergence properties.",
                     back: "• $f\\colon U\\to \\mathbb{C}$ is **locally univalent** if $f'\\neq 0$ on $U$\\n\\n• $f\\colon U\\to \\mathbb{C}$ is **univalent** if it is locally univalent and injective\\n\\n**Convergence Theorem**: Let $f_n\\colon U\\to \\mathbb{C}$ be univalent maps converging to $f$ uniformly on compact subsets. Then $f$ is either **constant** or **univalent**."
                 },
                 {
-                    id: 55,
+                    id: 56,
                     category: "Univalent Maps",
                     front: "State Hurwitz's Theorem.",
                     back: "• Let $f_n\\colon U\\to \\mathbb{C}$ be a sequence of analytic functions on a connected $U$ such that $f_n(z) \\neq 0$ for $z\\in U$ and $f_n\\to f$ uniformly on compact subsets. Then either $f\\equiv 0$ or $f$ is **never zero**.\\n\\n• Let $f_n\\colon U\\to \\widehat{\\mathbb{C}}$ be meromorphic functions converging uniformly $f_n\\to f$ on compact subsets with respect to the spherical metric. Then either $f\\equiv \\infty$ or $f$ is meromorphic.\\n\\n• A family $\\mathcal{F}$ of analytic functions is normal $\\iff$ every sequence either converges uniformly on compact subsets to an analytic function, or converges uniformly to $\\infty$."
                 },
                 {
-                    id: 56,
+                    id: 57,
                     category: "Univalent Maps",
                     front: "State the Koebe 1/4 Theorem.",
                     back: "If $f:\\Delta \\to \\mathbb{C}$ is **univalent** and **normalized** so that $f(0)=0$ and $f'(0)=1$, then $$f(\\Delta) \\supseteq \\{ w \\in \\mathbb{C} : |w| < 1/4 \\}$$\\n\\n This gives the **largest disk** guaranteed to be contained in the image of any normalized univalent function on the unit disk."
                 },
                 {
-                    id: 57,
+                    id: 58,
                     category: "Univalent Maps",
                     front: "State the Distortion Theorem.",
                     back: "If $f:\\Delta \\to \\mathbb{C}$ is univalent, $f(0)=0$, and $f'(0)=1$, then for every $z \\in \\Delta$:\\n\\n$$\\frac{|z|}{(1+|z|)^2} \\;\\leq\\; |f(z)| \\;\\leq\\; \\frac{|z|}{(1-|z|)^2}$$\\n\\n$$\\frac{1-|z|}{(1+|z|)^3} \\;\\leq\\; |f'(z)| \\;\\leq\\; \\frac{1+|z|}{(1-|z|)^3}$$\\n\\n These give **sharp bounds** on the growth of normalized univalent functions."
                 },
                 {
-                    id: 58,
+                    id: 59,
                     category: "Univalent Maps",
                     front: "State the Bieberbach Conjecture (de Branges Theorem).",
                     back: "If $f(z) = z + a_2 z^2 + a_3 z^3 + \\dots$ is **univalent** on $\\Delta$, then $$|a_n| \\leq n \\quad \\text{for all } n \\geq 2$$\\n\\n**Equality** holds precisely for rotations of the **Koebe function** $$k(z) = \\frac{z}{(1-z)^2}$$\\n\\n This fundamental result was conjectured in 1916 and proved by Louis de Branges in 1985."
@@ -513,37 +519,37 @@
 
                 // Section 6: Riemann Surfaces
                 {
-                    id: 59,
+                    id: 60,
                     category: "Riemann Surfaces",
                     front: "State the local normal form for holomorphic maps.",
                     back: "**Lemma**: Let $f: U \\to \\mathbb{C}$ be a non-zero holomorphic map with $f(0)=0$. Then there exists a unique $k \\in \\mathbb{Z}_+$ such that there is an open subset $V \\subseteq U$ containing $0$ and a holomorphic map $g: V \\to \\mathbb{C}$ with $g(0)=0$, $g'(0)\\neq 0$, and $$f(z) = \\big(g(z)\\big)^k$$\\n\\n**Corollary**: In local coordinates, $f$ can be written as $\\tilde{f}(z) = z^k$ where $k$ is the **index** of the point."
                 },
                 {
-                    id: 60,
+                    id: 61,
                     category: "Riemann Surfaces",
                     front: "Define critical points, degree, and the Riemann-Hurwitz formula.",
                     back: "Given $f: X \\to Y$ with $f(x) = y$, let $k_x$ be the local degree at $x$.\\n\\n• If $k_x > 1$, then $x$ is a **critical point** of order $k_x - 1$ and $y$ is a **critical value**\\n\\n• The **degree of $y$**: $d(y) = \\sum_{x \\in f^{-1}(y)} k_x$\\n\\n**Riemann-Hurwitz Formula**: If $X, Y$ are compact Riemann surfaces and $f: X \\to Y$ has degree $d$, then $$\\chi(X) = d \\cdot \\chi(Y) - R_f$$ where $R_f = \\sum_x (k_x - 1)$ counts ramification."
                 },
                 {
-                    id: 61,
+                    id: 62,
                     category: "Riemann Surfaces",
                     front: "State the simple pole biholomorphism lemma.",
                     back: "Let $f\\colon X\\to \\widehat{\\mathbb{C}}$ be a meromorphic function on a **compact Riemann surface**. If $f$ has **1 pole which is simple**, then $f$ is a **biholomorphism** to $\\widehat{\\mathbb{C}}$.\\n\\n**Proof**: Let $f$ have a single simple pole at $p$. Then $k_p=1$ and $d(\\infty)=k_p=1$. Thus, $f$ has degree $d=1$ and is a bijection. Since $X$ is compact, $f$ has continuous inverse, and the inverse is holomorphic."
                 },
                 {
-                    id: 62,
+                    id: 63,
                     category: "Riemann Surfaces",
                     front: "Define holomorphic differentials and residues on Riemann surfaces.",
                     back: "• A complex $1$-form $\\omega\\in \\Omega^1(X)$ is a **holomorphic differential** if in a coordinate chart $\\omega = f(z) dz$ where $f$ is holomorphic\\n\\n• If $\\omega$ is meromorphic, with a pole at $p \\in X$, then there is a local expansion $$\\omega = f(z)\\,dz = \\sum_{k=-n}^\\infty a_k z^k\\,dz$$\\n\\n• The coefficient $a_{-1}$ is the **residue** of $\\omega$ at $p$: $\\text{Res}(\\omega,p) = a_{-1}$"
                 },
                 {
-                    id: 63,
+                    id: 64,
                     category: "Riemann Surfaces",
                     front: "State the residue sum theorem for compact Riemann surfaces.",
                     back: "Let $\\omega$ be a **meromorphic one-form** on a **compact Riemann surface** $X$. Then the sum of the residues of $\\omega$ on $X$ is **zero**: $$\\sum_{p \\in X} \\text{Res}(\\omega,p) = 0$$\\n\\n**Proof**: Take small disjoint disks around the poles of $\\omega$, and let $U$ be the complement. Then $\\omega$ is holomorphic on a neighborhood of $U$, so $\\int_{\\partial U} \\omega = 0$. This implies the sum of the boundary integrals around the disks (i.e., residues) vanishes."
                 },
                 {
-                    id: 64,
+                    id: 65,
                     category: "Riemann Surfaces",
                     front: "State the zeros and poles count theorem.",
                     back: "If $f$ is a **meromorphic function** on a **compact Riemann surface** $X$, then $$N(f) - P(f) = 0$$ where $N(f) =$ number of zeros and $P(f) =$ number of poles (with multiplicity).\\n\\n**Proof**: $\\frac{df}{f}$ is a meromorphic one-form, with poles at the zeros and poles of $f$, and with residue equal to the order of the point. By the residue theorem: $$N(f) - P(f) = \\sum \\text{Res}\\left(\\frac{f'}{f}, p\\right) = 0$$"
