@@ -478,7 +478,7 @@
                     id: 43,
                     category: "Riemann Mapping",
                     front: "State the theorem about rational functions on the Riemann sphere.",
-                    back: "Every non-constant analytic map $f: \\widehat{\\mathbb{C}} \\to \\widehat{\\mathbb{C}}$ is a **rational function**.\\n\\n**Proof**: By composing with a Möbius transformation if necessary, we may assume without loss of generality that $f(\\infty) = \\infty$.\\n\\nSince $f$ is analytic on the **compact Riemann sphere** $\\widehat{\\mathbb{C}}$, it cannot have any **essential singularities**: essential singularities are not isolated, and thus are incompatible with analyticity on a compact surface. Hence, all singularities of $f$ are **poles**.\\n\\nLet $\\{p_i\\}$ be the set of poles of $f$, and let $f_i$ be the **principal part** of the Laurent expansion of $f$ at $p_i$. Since $f$ is meromorphic on the compact sphere, $\\{p_i\\}$ must be a **finite set**; otherwise, the poles would accumulate and contradict the analyticity of $f$, forcing $f \\equiv \\infty$.\\n\\nDefine the function $$g(z) := f(z) - \\sum_i f_i(z)$$\\n\\nThen $g$ is **analytic on all of** $\\widehat{\\mathbb{C}}$, i.e., an entire function with no poles. Since $f(\\infty) = \\infty$, we see that $g(\\infty) = \\infty$, so $g$ is **proper**. Therefore, $g$ must be a **polynomial**.\\n\\nIt follows that $f = g + \\sum_i f_i$ is the sum of a polynomial and finitely many principal parts — hence a **rational function**."
+                    back: "Every non-constant analytic map $f: \\widehat{\\mathbb{C}} \\to \\widehat{\\mathbb{C}}$ is a **rational function**.\\n\\n**Proof**: By composing with a Möbius transformation if necessary, we may assume without loss of generality that $f(\\infty) = \\infty$.\\n\\n Since $f$ is analytic on the **compact Riemann sphere** $\\widehat{\\mathbb{C}}$, it cannot have any **essential singularities**: essential singularities are not isolated, and thus are incompatible with analyticity on a compact surface. Hence, all singularities of $f$ are **poles**.\\n\\n Let $\\{p_i\\}$ be the set of poles of $f$, and let $f_i$ be the **principal part** of the Laurent expansion of $f$ at $p_i$. Since $f$ is meromorphic on the compact sphere, $\\{p_i\\}$ must be a **finite set**; otherwise, the poles would accumulate and contradict the analyticity of $f$, forcing $f \\equiv \\infty$.\\n\\n Define the function $$g(z) := f(z) - \\sum_i f_i(z)$$\\n\\n Then $g$ is **analytic on all of** $\\widehat{\\mathbb{C}}$, i.e., an entire function with no poles. Since $f(\\infty) = \\infty$, we see that $g(\\infty) = \\infty$, so $g$ is **proper**. Therefore, $g$ must be a **polynomial**.\\n\\nIt follows that $f = g + \\sum_i f_i$ is the sum of a polynomial and finitely many principal parts — hence a **rational function**."
                 },
                 {
                     id: 44,
@@ -503,7 +503,7 @@
                 {
                     id: 47,
                     category: "Conformal Geometry",
-                    front: "Define conformal metrics and geometric quantities.",
+                    front: "Define conformal metrics and the associated geometric quantities (length, area, pullback metric, isometry, and curvature).",
                     back: "A **conformal metric** $\\rho$ on a Riemann surface $X$ is given locally by $\\rho(z) |dz|$ where $\\rho: X \\to \\mathbb{R}_+$ is continuous.\\n\\n**Geometric Quantities**:\\n• **Length**: $L_\\rho(\\gamma) = \\int_\\gamma \\rho(z) |dz|$\\n• **Area**: $A_\\rho(U) = \\int_U \\rho^2(z) dx dy$\\n• **Pullback metric**: $f^*(\\rho)(z)|dz| = \\rho(f(z)) |f'(z)| |dz|$\\n• **Isometry**: $\\rho_1(z) = \\rho_2(f(z)) |f'(z)|$\\n• **Gaussian curvature**: $K(\\rho) \\defeq -\\frac{\\Delta(\\log \\rho)}{\\rho^2}$ where $\\Delta$ is the **Laplacian**, defined as $\\Delta(u) = u_{xx} + u_{yy}$"
                 },
                 {
@@ -527,7 +527,7 @@
                 {
                     id: 51,
                     category: "Conformal Geometry",
-                    front: "State the explicit Schwarz-Pick formulas for all cases.",
+                    front: "State the explicit Schwarz-Pick formulas for all cases of analytic maps between $\\Delta$ and $\\mathbb{H}$.",
                     back: "From the distance decreasing property of analytic maps between hyperbolic spaces:\\n\\n**For $f\\colon \\Delta \\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{\\Im (f(z))}{\\Im z}$$\\n\\n**For $f\\colon \\Delta \\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{2\\,\\Im (f(z))}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{2\\,\\Im z}$$"
                 },
                 {
@@ -577,7 +577,7 @@
                 {
                     id: 59,
                     category: "Univalent Maps",
-                    front: "Define univalent functions and state convergence properties.",
+                    front: "Define univalent functions and state the convergence properties sequences of univalent functions satisfy.",
                     back: "• $f\\colon U\\to \\mathbb{C}$ is **locally univalent** if $f'\\neq 0$ on $U$\\n\\n• $f\\colon U\\to \\mathbb{C}$ is **univalent** if it is locally univalent and injective\\n\\n**Convergence Theorem**: Let $f_n\\colon U\\to \\mathbb{C}$ be univalent maps converging to $f$ uniformly on compact subsets. Then $f$ is either **constant** or **univalent**."
                 },
                 {
@@ -595,7 +595,7 @@
                 {
                     id: 62,
                     category: "Univalent Maps",
-                    front: "State the Distortion Theorem.",
+                    front: "State the Koebe Distortion Theorem.",
                     back: "If $f:\\Delta \\to \\mathbb{C}$ is univalent, $f(0)=0$, and $f'(0)=1$, then for every $z \\in \\Delta$:\\n\\n$$\\frac{|z|}{(1+|z|)^2} \\;\\leq\\; |f(z)| \\;\\leq\\; \\frac{|z|}{(1-|z|)^2}$$\\n\\n$$\\frac{1-|z|}{(1+|z|)^3} \\;\\leq\\; |f'(z)| \\;\\leq\\; \\frac{1+|z|}{(1-|z|)^3}$$\\n\\n These give **sharp bounds** on the growth of normalized univalent functions."
                 },
                 {
