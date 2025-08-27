@@ -5,7 +5,7 @@ An interactive web-based flashcard application for studying Complex Analysis con
 ## Features
 
 ### 📚 Comprehensive Content
-- **64 flashcards** covering essential Complex Analysis topics:
+- **75 flashcards** covering essential Complex Analysis topics:
   - **Basics** (15 cards): Complex differentiation, Cauchy-Riemann equations, Möbius transformations
   - **Integration** (19 cards): Cauchy's theorem, residue theory, argument principle, Weierstrass convergence
   - **Riemann Mapping** (10 cards): Schwarz lemma, reflection principle, Riemann mapping theorem
