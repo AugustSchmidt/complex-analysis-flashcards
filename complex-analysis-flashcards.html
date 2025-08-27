@@ -181,8 +181,8 @@
                 {
                     id: 5,
                     category: "Basics",
-                    front: "State the power series radius of convergence theorem.",
-                    back: "Let $f(z) = \\sum_{n=0}^\\infty a_n(z-z_0)^n$ be a formal power series centered at $z_0$. The **radius of convergence** $R$ is given by $$1/R = \\limsup_{n\\rightarrow \\infty} |a_n|^{1/n}.$$\\n\\n When $|z-z_0|<R$, the power series converges. When $|z-z_0|>R$, the power series diverges.\\n\\n**Properties**:\\n1. The series is absolutely convergent in $B(z_0, R)$ and uniformly absolutely convergent in $B(z_0, r)$ for $r<R$\\n\\n2. The series is analytic on $B(z_0, R)$ with derivative $$f'(z) = \\sum_{n=1}^\\infty n a_n(z-z_0)^{n-1}$$ where $a_n = \\frac{f^{(n)}(z_0)}{n!}$"
+                    front: "Define the radius of convergence of a power series. Give the formula for the derivative of a power series.",
+                    back: "Let $f(z) = \\sum_{n=0}^\\infty a_n(z-z_0)^n$ be a formal power series centered at $z_0$. The **radius of convergence** $R$ is given by $$1/R = \\limsup_{n\\rightarrow \\infty} |a_n|^{1/n}.$$\\n\\n When $|z-z_0|<R$, the power series converges. When $|z-z_0|>R$, the power series diverges.\\n\\n**Properties**:\\n1. The series is absolutely convergent in $B(z_0, R)$ and uniformly absolutely convergent in $B(z_0, r)$ for $r<R$\\n\\n2. The series is analytic on $B(z_0, R)$ with derivative $$f'(z) = \\sum_{n=1}^\\infty n b_n(z-z_0)^{n-1}$$ where $b_n = \\frac{f^{(n)}(z_0)}{n!}$"
                 },
                 {
                     id: 6,
@@ -255,7 +255,7 @@
                 {
                     id: 17,
                     category: "Integration",
-                    front: "Define line integrals for complex functions.",
+                    front: "Define line and path integrals for complex functions.",
                     back: "• Let $f\\colon [a,b]\\rightarrow \\mathbb{C}$ be given by $f(t) = u(t) + i v(t)$. Then $$\\int_a^b f(t) dt \\defeq \\int_a^b u(t) dt + i \\int_a^b v(t) dt$$\\n\\n• Let $\\gamma\\colon [a,b]\\rightarrow \\mathbb{C}$ be a piecewise differentiable curve and $f\\colon \\gamma([a,b]) \\rightarrow \\mathbb{C}$ be continuous. Then $$\\int_\\gamma f(z) dz \\defeq \\int_a^b f(\\gamma(t)) \\gamma'(t) dt$$"
                 },
                 {
@@ -1508,9 +1508,9 @@
                         nav: isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-600 hover:bg-gray-700',
                         purple: isDarkMode ? 'bg-purple-700 hover:bg-purple-800' : 'bg-purple-600 hover:bg-purple-700',
                         green: isDarkMode ? 'bg-green-700 hover:bg-green-800' : 'bg-green-100 hover:bg-green-200',
-                        greenActive: isDarkMode ? 'bg-green-800' : 'bg-green-600',
+                        greenActive: isDarkMode ? 'bg-green-600 shadow-lg shadow-green-500/50' : 'bg-green-600 shadow-lg shadow-green-500/30',
                         red: isDarkMode ? 'bg-red-700 hover:bg-red-800' : 'bg-red-100 hover:bg-red-200',
-                        redActive: isDarkMode ? 'bg-red-800' : 'bg-red-600'
+                        redActive: isDarkMode ? 'bg-red-600 shadow-lg shadow-red-500/50' : 'bg-red-600 shadow-lg shadow-red-500/30'
                     },
                     progressBar: isDarkMode ? 'bg-gray-700' : 'bg-gray-200',
                     progressFill: isDarkMode ? 'bg-blue-500' : 'bg-blue-600'
@@ -1588,10 +1588,17 @@
                                 ),
                                 React.createElement('button', {
                                     onClick: () => setShowProgress(!showProgress),
-                                    className: `flex items-center gap-2 px-3 py-1 ${themeClasses.button.secondary} rounded-lg text-sm`
+                                    className: `flex items-center gap-2 px-3 py-1 ${themeClasses.button.purple} text-white rounded-lg text-sm transition-colors`
                                 },
                                     React.createElement(showProgress ? EyeOff : Eye, { size: 16 }),
                                     "Progress"
+                                ),
+                                React.createElement('button', {
+                                    onClick: resetDeck,
+                                    className: `flex items-center gap-2 px-3 py-1 ${themeClasses.button.purple} text-white rounded-lg text-sm transition-colors`
+                                },
+                                    React.createElement(RotateCcw, { size: 16 }),
+                                    "Reset"
                                 )
                             )
                         ),
@@ -1666,11 +1673,11 @@
                                             ),
                                             React.createElement('button', {
                                                 onClick: () => markCard(false),
-                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === false ? themeClasses.button.redActive : themeClasses.button.red} ${isDarkMode ? 'text-red-300' : 'text-red-600'} rounded-lg transition-colors`
+                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === false ? themeClasses.button.redActive : themeClasses.button.red} ${progress[safeCurrentCard.id] === false ? 'text-white font-semibold' : (isDarkMode ? 'text-red-300' : 'text-red-600')} rounded-lg transition-all`
                                             }, "Incorrect"),
                                             React.createElement('button', {
                                                 onClick: () => markCard(true),
-                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === true ? themeClasses.button.greenActive : themeClasses.button.green} ${isDarkMode ? 'text-green-300' : 'text-green-600'} rounded-lg transition-colors`
+                                                className: `px-4 py-2 ${progress[safeCurrentCard.id] === true ? themeClasses.button.greenActive : themeClasses.button.green} ${progress[safeCurrentCard.id] === true ? 'text-white font-semibold' : (isDarkMode ? 'text-green-300' : 'text-green-600')} rounded-lg transition-all`
                                             }, "Correct")
                                         )
                                 ),
