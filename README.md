@@ -6,12 +6,12 @@ An interactive web-based flashcard application for studying Complex Analysis con
 
 ### 📚 Comprehensive Content
 - **75 flashcards** covering essential Complex Analysis topics:
-  - **Basics** (15 cards): Complex differentiation, Cauchy-Riemann equations, Möbius transformations
-  - **Integration** (19 cards): Cauchy's theorem, residue theory, argument principle, Weierstrass convergence
-  - **Riemann Mapping** (10 cards): Schwarz lemma, reflection principle, Riemann mapping theorem
-  - **Conformal Geometry** (10 cards): Hyperbolic metrics, Schwarz-Pick theorem, curvature formulas
-  - **Univalent Maps** (9 cards): Bieberbach conjecture, coefficient bounds, extremal properties
-  - **Riemann Surfaces** (7 cards): Genus, uniformization, divisors, Riemann-Roch theorem
+  - **Basics** (17 cards): Complex differentiation, Cauchy-Riemann equations, Möbius transformations
+  - **Integration** (20 cards): Cauchy's theorem, residue theory, argument principle, Weierstrass convergence
+  - **Riemann Mapping** (15 cards): Schwarz lemma, reflection principle, Riemann mapping theorem
+  - **Conformal Geometry** (9 cards): Hyperbolic metrics, Schwarz-Pick theorem, curvature formulas
+  - **Univalent Maps** (8 cards): Bieberbach conjecture, coefficient bounds, extremal properties
+  - **Riemann Surfaces** (6 cards): Genus, uniformization, divisors, Riemann-Roch theorem
 
 ### 🎯 Study Tools
 - **Category Filtering**: Study specific topics by selecting/deselecting categories
