@@ -493,63 +493,93 @@
                     back: "**Analytic Covering Map**: If $X$ and $Y$ are Riemann surfaces, a map $\\pi: X \\to Y$ is an analytic covering map if it is a covering map such that at each point $p \\in Y$, there is an open neighborhood $U$ such that $\\pi^{-1}(U) = \\cup U_\\alpha$ where $\\pi|_{U_\\alpha}: U_\\alpha \\to U$ is a biholomorphism.\\n\\n**Universal Cover**: Given a Riemann surface $X$, there is a universal cover $\\pi: \\tilde{X} \\to X$ such that $X = \\tilde{X}/\\Gamma$ where $\\Gamma \\subseteq \\text{Aut}(\\tilde{X})$."
                 },
                 {
-                    id: 46,
+                    id: 46, 
+                    category: "Riemann Mapping", 
+                    front: "Describe the uniformization of $\\Omega = \\mathbb{R}\\times (0, \\pi)$.", 
+                    back: "The primary branch of $\\log\\colon \\mathbb{H}\\to \\mathbb{R}\\times (0, \\pi)$ uniformizes since $\\log(r e^{i\\theta}) = \\log(r)+i\\theta$ for $\\theta\\in (0, \\pi)$."
+                },
+                {
+                    id: 47, 
+                    category: "Riemann Mapping", 
+                    front: "Describe the uniformization of $\\Omega =$ the intersection of two disks which intersect at interior angle $\\theta$ at points $p, q$.",
+                    back: "We can map $p, q \\mapsto 0, \\infty$ by a Mobius transformation so that $\\Omega$ gets mapped to $$S(\\theta) = \\{ z\\in \\mathbb{C} \\colon 0 < \\operatorname{arg}(z)< \\theta\\}.$$ Then the map $f\\colon \\mathbb{H} \\to S(\\theta)$ given by $f(z) = z^{\\theta/\\pi}$ uniformizes $S(\\theta)$.",
+                },
+                {
+                    id: 48, 
+                    category: "Riemann Mapping", 
+                    front: "Describe the uniformization of the punctured plane $\\Omega = \\mathbb{C} - \\{0\\}$.", 
+                    back: "The exponential $f\\colon \\mathbb{C} \\to \\Omega$ by $$f(z) = \\exp(2\\pi i z)$$ works with $$\\Gamma = \\langle z \\mapsto z+1 \\rangle.$$"
+                },
+                {
+                    id: 49, 
+                    category: "Riemann Mapping", 
+                    front: "Describe the uniformization of the punctured disk $\\Omega = \\{ z \\in \\Delta\\colon 0 < |z| < 1 \\}$.", 
+                    back: "The exponential $f\\colon \\mathbb{H} \\to \\Omega$ by $$f(z) = \\exp(2\\pi i z)$$ works with $$\\Gamma = \\langle z \\mapsto z+1 \\rangle.$$"
+                },
+                {
+                    id: 50, 
+                    category: "Riemann Mapping", 
+                    front: "Describe the uniformization of the annulus $\\A_r = \\{ z\\in \\mathbb{C} \\colon r < |z| < 1\\}$.", 
+                    back: "The annulus $A_r$ is uniformized by the **upper half-plane** $\\mathbb{H}$ via a covering map.\\n\\n**Construction**: For $r \\in (0,1)$, set $L \\defeq \\log(1/r)$ and $\\ell = \\frac{2\\pi^2}{L}$. The covering map is:\\n$$\\pi\\colon \\mathbb{H} \\to A_r, \\quad z \\mapsto \\exp\\left( \\frac{2\\pi i}{\\ell} \\log(z)\\right)$$\\n\\n**Key computation**: For $z = \\rho e^{i\\theta}$ with $\\theta \\in (0,\\pi)$:\\n$$|\\pi(z)| = \\exp\\left(-\\frac{L}{\\pi}\\theta\\right)$$\\n\\nAs $\\theta$ ranges from $0$ to $\\pi$, we get $|\\pi(z)|$ ranging from $1$ to $r = \\exp(-L)$, so $\\pi$ maps $\\mathbb{H}$ onto $A_r$.\\n\\n**Covering group**: $\\Gamma = \\langle z \\mapsto \\lambda z \\rangle$ where $\\lambda = \\exp(\\ell)$. The map $\\pi$ is invariant under $\\Gamma$: $\\pi(\\lambda z) = \\pi(z)$.\\n\\n**Result**: $A_r \\cong \\mathbb{H}/\\Gamma$, giving the uniformization of the annulus."
+                },
+                {
+                    id: 51,
                     category: "Riemann Mapping",
-                    front: "State the classification of universal covers.",
+                    front: "Classify the Riemann surfaces with universal cover $\\mathbb{C}$ by deck transformations.",
                     back: "If $X$ is a Riemann surface with universal cover $\\mathbb{C}$, then $X = \\mathbb{C}/\\Gamma$ where:\\n\\n• $\\Gamma = \\langle z+1 \\rangle$ (cylinder/punctured plane), or\\n\\n• $\\Gamma = \\langle z+1, z+\\tau \\rangle$ for $\\tau \\in \\mathbb{H}$ (torus)"
                 },
 
                 // Section 4: Conformal Geometry
                 {
-                    id: 47,
+                    id: 52,
                     category: "Conformal Geometry",
                     front: "Define conformal metrics and the associated geometric quantities (length, area, pullback metric, isometry, and curvature).",
                     back: "A **conformal metric** $\\rho$ on a Riemann surface $X$ is given locally by $\\rho(z) |dz|$ where $\\rho: X \\to \\mathbb{R}_+$ is continuous.\\n\\n**Geometric Quantities**:\\n• **Length**: $L_\\rho(\\gamma) = \\int_\\gamma \\rho(z) |dz|$\\n• **Area**: $A_\\rho(U) = \\int_U \\rho^2(z) dx dy$\\n• **Pullback metric**: $f^*(\\rho)(z)|dz| = \\rho(f(z)) |f'(z)| |dz|$\\n• **Isometry**: $\\rho_1(z) = \\rho_2(f(z)) |f'(z)|$\\n• **Gaussian curvature**: $K(\\rho) \\defeq -\\frac{\\Delta(\\log \\rho)}{\\rho^2}$ where $\\Delta$ is the **Laplacian**, defined as $\\Delta(u) = u_{xx} + u_{yy}$"
                 },
                 {
-                    id: 48,
+                    id: 53,
                     category: "Conformal Geometry",
                     front: "Define the standard conformal metrics.",
                     back: "**Euclidean/Flat metric** on $\\mathbb{C}$: $\\rho(z) = |dz|$\\n\\n**Spherical metric** on $\\widehat{\\mathbb{C}}$: $\\rho_{\\widehat{\\mathbb{C}}}(z) |dz| = \\frac{2 |dz|}{1+|z|^2}$\\n\\n**Hyperbolic metric on $\\mathbb{H}$**: $\\rho_{\\mathbb{H}}(z) = \\frac{1}{\\text{Im}(z)}$ giving distance $d_\\mathbb{H}(z, w) = \\left|\\frac{z-w}{z-\\overline{w}}\\right|$\\n\\n**Hyperbolic metric on $\\Delta$**: $\\rho_{\\Delta}(z) = \\frac{2}{1 - |z|^2}$ giving distance $d_{\\Delta}(z,w) = \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$"
                 },
                 {
-                    id: 49,
+                    id: 54,
                     category: "Conformal Geometry",
                     front: "State the curvatures of the standard metrics.",
                     back: "• **Flat metric**: $K = 0$ (since $\\log \\rho = \\log 1 = 0$)\\n\\n• **Spherical metric**: $K = +1$\\n\\n• **Hyperbolic metrics**: Both $\\rho_\\mathbb{H}$ and $\\rho_\\Delta$ have Gaussian curvature $K = -1$"
                 },
                 {
-                    id: 50,
+                    id: 55,
                     category: "Conformal Geometry",
                     front: "State the Schwarz-Pick Theorem.",
                     back: "If $f: \\Omega_1 \\to \\Omega_2$ is analytic, with $\\Omega_j \\in \\{\\Delta, \\mathbb{H}\\}$, then:\\n\\n• **Distance decreasing**: $d_{\\Omega_2}(f(z), f(w)) \\leq d_{\\Omega_1}(z,w)$\\n\\n• **Differential form**: $\\rho_{\\Omega_2}(f(z)) \\cdot |f'(z)| \\leq \\rho_{\\Omega_1}(z)$\\n\\n• **Equality case**: If equality holds for some pair of distinct points (or one point with $f'(z) \\neq 0$), then $f$ is a Möbius transformation that is an isometry."
                 },
                 {
-                    id: 51,
+                    id: 56,
                     category: "Conformal Geometry",
                     front: "State the explicit Schwarz-Pick formulas for all cases of analytic maps between $\\Delta$ and $\\mathbb{H}$.",
                     back: "From the distance decreasing property of analytic maps between hyperbolic spaces:\\n\\n**For $f\\colon \\Delta \\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{\\Im (f(z))}{\\Im z}$$\\n\\n**For $f\\colon \\Delta \\to \\mathbb{H}$**:\\n$$\\left|\\frac{f(z)-f(w)}{f(z)-\\overline{f(w)}}\\right| \\leq \\left|\\frac{z-w}{1-\\overline{w}z}\\right|$$\\n$$|f'(z)| \\leq \\frac{2\\,\\Im (f(z))}{1-|z|^2}$$\\n\\n**For $f\\colon \\mathbb{H}\\to \\Delta$**:\\n$$\\left|\\frac{f(z)-f(w)}{1-\\overline{f(w)}f(z)}\\right| \\leq \\left|\\frac{z-w}{z-\\overline{w}}\\right|$$\\n$$|f'(z)| \\leq \\frac{1-|f(z)|^2}{2\\,\\Im z}$$"
                 },
                 {
-                    id: 52,
+                    id: 57,
                     category: "Conformal Geometry",
                     front: "State the triangle area formulas for constant curvature.",
                     back: "Let $T$ be a triangle with angles $A,B,C$. Then:\\n\\n• **Spherical geometry** ($K = +1$): $\\text{area}(T) = A + B + C - \\pi$\\n\\n• **Hyperbolic geometry** ($K = -1$): $\\text{area}(T) = \\pi - (A + B + C)$\\n\\n**Note**: In Euclidean geometry ($K = 0$), $A + B + C = \\pi$."
                 },
                 {
-                    id: 53,
+                    id: 58,
                     category: "Conformal Geometry",
                     front: "State the isometry groups of standard geometries.",
                     back: "• **Euclidean**: $\\text{Iso}^+(\\mathbb{C}, \\rho) = \\{f(z) = az + b : a,b \\in \\mathbb{C}, |a| = 1\\}$\\n\\n• **Spherical**: $\\text{Iso}^+(\\widehat{\\mathbb{C}}, \\rho_{\\widehat{\\mathbb{C}}}) \\simeq \\text{PSU}(2)$\\n\\n• **Hyperbolic on $\\mathbb{H}$**: $\\text{Iso}^+(\\mathbb{H}, \\rho_\\mathbb{H}) = \\text{PSL}(2, \\mathbb{R})$\\n\\n• **Hyperbolic on $\\Delta$**: $\\text{Iso}^+(\\Delta, \\rho_\\Delta) = \\text{PSU}(1,1)$"
                 },
                 {
-                    id: 54,
+                    id: 59,
                     category: "Conformal Geometry",
                     front: "State the Little Picard Theorem.",
                     back: "An **entire function** that **misses two values** is **constant**.\\n\\n**Proof**: If $f$ misses two points $a,b$, then $f: \\mathbb{C} \\to \\mathbb{C} \\setminus \\{a,b\\}$ is analytic. Since $\\mathbb{C} \\setminus \\{a,b\\}$ is hyperbolic, lift $f$ to analytic map $\\tilde{f}: \\mathbb{C} \\to \\Delta$. Thus $\\tilde{f}$ is constant by Liouville's Theorem, so $f$ is constant."
                 },
                 {
-                    id: 55,
+                    id: 60,
                     category: "Conformal Geometry",
                     front: "State the Great Picard Theorem.",
                     back: "Let $f: U \\setminus \\{p\\} \\to \\mathbb{C}$ be analytic with an **essential singularity** at $p$. Then $f$ takes on **every value** in $\\mathbb{C}$ except possibly **1** in every neighborhood of $p$.\\n\\n This strengthens Casorati-Weierstrass: near an essential singularity, $f$ not only gets dense in $\\mathbb{C}$, but actually hits every value except at most one."
@@ -557,49 +587,49 @@
 
                 // Section 5: Univalent Maps  
                 {
-                    id: 56,
+                    id: 61,
                     category: "Univalent Maps",
                     front: "Define normal families and equicontinuity.",
                     back: "Let $C(U)$ be the set of continuous complex functions on $U\\subseteq \\mathbb{C}$.\\n\\n• A family $\\mathcal{F}\\subset C(U)$ is **equicontinuous** on $E\\subseteq U$ if given any $\\epsilon > 0$, there exists $\\delta > 0$ such that $|f(z) - f(w)| < \\epsilon$ whenever $|z-w|< \\delta$ where $z,w\\in E$.\\n\\n• A family $\\mathcal{F}$ is **normal** in $U$ if every sequence $\\{f_n\\}\\subset \\mathcal{F}$ contains a subsequence which converges uniformly on every compact subset of $U$."
                 },
                 {
-                    id: 57,
+                    id: 62,
                     category: "Univalent Maps",
                     front: "State the Arzela-Ascoli Theorem.",
                     back: "A family of continuous functions $\\mathcal{F}$ on $U$ is **normal** if and only if:\\n\\n• $\\mathcal{F}$ is **equicontinuous** on every compact subset of $U$\\n\\n• $\\mathcal{F}$ is **pointwise bounded**, i.e. given $z\\in U$, there exist a $M$ such that $|f(z)|\\leq M$ for all $f\\in \\mathcal{F}$"
                 },
                 {
-                    id: 58,
+                    id: 63,
                     category: "Univalent Maps",
                     front: "State Montel's Theorem.",
                     back: "**Conditions for normality** of analytic function families:\\n\\n• Let $\\mathcal{F}$ be a family of **meromorphic maps** on $U\\subseteq \\mathbb{C}$ which **misses three values** of $\\widehat{\\mathbb{C}}$. Then $\\mathcal{F}$ is a normal family.\\n\\n• Let $\\mathcal{F}$ be a family of **analytic functions** on $U\\subseteq \\mathbb{C}$ where each member of the family misses the same complex values $a,b\\in \\mathbb{C}$. Then $\\mathcal{F}$ is normal.\\n\\n• A family $\\mathcal{F}$ of analytic functions on $U$ is normal $\\iff$ $\\mathcal{F}$ is uniformly bounded on every compact set."
                 },
                 {
-                    id: 59,
+                    id: 64,
                     category: "Univalent Maps",
                     front: "Define univalent functions and state the convergence properties sequences of univalent functions satisfy.",
                     back: "• $f\\colon U\\to \\mathbb{C}$ is **locally univalent** if $f'\\neq 0$ on $U$\\n\\n• $f\\colon U\\to \\mathbb{C}$ is **univalent** if it is locally univalent and injective\\n\\n**Convergence Theorem**: Let $f_n\\colon U\\to \\mathbb{C}$ be univalent maps converging to $f$ uniformly on compact subsets. Then $f$ is either **constant** or **univalent**."
                 },
                 {
-                    id: 60,
+                    id: 65,
                     category: "Univalent Maps",
                     front: "State Hurwitz's Theorem.",
                     back: "• Let $f_n\\colon U\\to \\mathbb{C}$ be a sequence of analytic functions on a connected $U$ such that $f_n(z) \\neq 0$ for $z\\in U$ and $f_n\\to f$ uniformly on compact subsets. Then either $f\\equiv 0$ or $f$ is **never zero**.\\n\\n• Let $f_n\\colon U\\to \\widehat{\\mathbb{C}}$ be meromorphic functions converging uniformly $f_n\\to f$ on compact subsets with respect to the spherical metric. Then either $f\\equiv \\infty$ or $f$ is meromorphic.\\n\\n• A family $\\mathcal{F}$ of analytic functions is normal $\\iff$ every sequence either converges uniformly on compact subsets to an analytic function, or converges uniformly to $\\infty$."
                 },
                 {
-                    id: 61,
+                    id: 66,
                     category: "Univalent Maps",
                     front: "State the Koebe 1/4 Theorem.",
                     back: "If $f:\\Delta \\to \\mathbb{C}$ is **univalent** and **normalized** so that $f(0)=0$ and $f'(0)=1$, then $$f(\\Delta) \\supseteq \\{ w \\in \\mathbb{C} : |w| < 1/4 \\}$$\\n\\n This gives the **largest disk** guaranteed to be contained in the image of any normalized univalent function on the unit disk."
                 },
                 {
-                    id: 62,
+                    id: 67,
                     category: "Univalent Maps",
                     front: "State the Koebe Distortion Theorem.",
                     back: "If $f:\\Delta \\to \\mathbb{C}$ is univalent, $f(0)=0$, and $f'(0)=1$, then for every $z \\in \\Delta$:\\n\\n$$\\frac{|z|}{(1+|z|)^2} \\;\\leq\\; |f(z)| \\;\\leq\\; \\frac{|z|}{(1-|z|)^2}$$\\n\\n$$\\frac{1-|z|}{(1+|z|)^3} \\;\\leq\\; |f'(z)| \\;\\leq\\; \\frac{1+|z|}{(1-|z|)^3}$$\\n\\n These give **sharp bounds** on the growth of normalized univalent functions."
                 },
                 {
-                    id: 63,
+                    id: 68,
                     category: "Univalent Maps",
                     front: "State the Bieberbach Conjecture (de Branges Theorem).",
                     back: "If $f(z) = z + a_2 z^2 + a_3 z^3 + \\dots$ is **univalent** on $\\Delta$, then $$|a_n| \\leq n \\quad \\text{for all } n \\geq 2$$\\n\\n**Equality** holds precisely for rotations of the **Koebe function** $$k(z) = \\frac{z}{(1-z)^2}$$\\n\\n This fundamental result was conjectured in 1916 and proved by Louis de Branges in 1985."
@@ -607,37 +637,37 @@
 
                 // Section 6: Riemann Surfaces
                 {
-                    id: 64,
+                    id: 70,
                     category: "Riemann Surfaces",
                     front: "State the local normal form for holomorphic maps.",
                     back: "**Lemma**: Let $f: U \\to \\mathbb{C}$ be a non-zero holomorphic map with $f(0)=0$. Then there exists a unique $k \\in \\mathbb{Z}_+$ such that there is an open subset $V \\subseteq U$ containing $0$ and a holomorphic map $g: V \\to \\mathbb{C}$ with $g(0)=0$, $g'(0)\\neq 0$, and $$f(z) = \\big(g(z)\\big)^k$$\\n\\n**Corollary**: In local coordinates, $f$ can be written as $\\tilde{f}(z) = z^k$ where $k$ is the **index** of the point."
                 },
                 {
-                    id: 65,
+                    id: 71,
                     category: "Riemann Surfaces",
                     front: "Define critical points, degree, and the Riemann-Hurwitz formula.",
                     back: "Given $f: X \\to Y$ with $f(x) = y$, let $k_x$ be the local degree at $x$.\\n\\n• If $k_x > 1$, then $x$ is a **critical point** of order $k_x - 1$ and $y$ is a **critical value**\\n\\n• The **degree of $y$**: $d(y) = \\sum_{x \\in f^{-1}(y)} k_x$\\n\\n**Riemann-Hurwitz Formula**: If $X, Y$ are compact Riemann surfaces and $f: X \\to Y$ has degree $d$, then $$\\chi(X) = d \\cdot \\chi(Y) - R_f$$ where $R_f = \\sum_x (k_x - 1)$ counts ramification."
                 },
                 {
-                    id: 66,
+                    id: 72,
                     category: "Riemann Surfaces",
                     front: "State the simple pole biholomorphism lemma.",
                     back: "Let $f\\colon X\\to \\widehat{\\mathbb{C}}$ be a meromorphic function on a **compact Riemann surface**. If $f$ has **1 pole which is simple**, then $f$ is a **biholomorphism** to $\\widehat{\\mathbb{C}}$.\\n\\n**Proof**: Let $f$ have a single simple pole at $p$. Then $k_p=1$ and $d(\\infty)=k_p=1$. Thus, $f$ has degree $d=1$ and is a bijection. Since $X$ is compact, $f$ has continuous inverse, and the inverse is holomorphic."
                 },
                 {
-                    id: 67,
+                    id: 73,
                     category: "Riemann Surfaces",
                     front: "Define holomorphic differentials and residues on Riemann surfaces.",
                     back: "• A complex $1$-form $\\omega\\in \\Omega^1(X)$ is a **holomorphic differential** if in a coordinate chart $\\omega = f(z) dz$ where $f$ is holomorphic\\n\\n• If $\\omega$ is meromorphic, with a pole at $p \\in X$, then there is a local expansion $$\\omega = f(z)\\,dz = \\sum_{k=-n}^\\infty a_k z^k\\,dz$$\\n\\n• The coefficient $a_{-1}$ is the **residue** of $\\omega$ at $p$: $\\text{Res}(\\omega,p) = a_{-1}$"
                 },
                 {
-                    id: 68,
+                    id: 74,
                     category: "Riemann Surfaces",
                     front: "State the residue sum theorem for compact Riemann surfaces.",
                     back: "Let $\\omega$ be a **meromorphic one-form** on a **compact Riemann surface** $X$. Then the sum of the residues of $\\omega$ on $X$ is **zero**: $$\\sum_{p \\in X} \\text{Res}(\\omega,p) = 0$$\\n\\n**Proof**: Take small disjoint disks around the poles of $\\omega$, and let $U$ be the complement. Then $\\omega$ is holomorphic on a neighborhood of $U$, so $\\int_{\\partial U} \\omega = 0$. This implies the sum of the boundary integrals around the disks (i.e., residues) vanishes."
                 },
                 {
-                    id: 69,
+                    id: 75,
                     category: "Riemann Surfaces",
                     front: "State the zeros and poles count theorem.",
                     back: "If $f$ is a **meromorphic function** on a **compact Riemann surface** $X$, then $$N(f) - P(f) = 0$$ where $N(f) =$ number of zeros and $P(f) =$ number of poles (with multiplicity).\\n\\n**Proof**: $\\frac{df}{f}$ is a meromorphic one-form, with poles at the zeros and poles of $f$, and with residue equal to the order of the point. By the residue theorem: $$N(f) - P(f) = \\sum \\text{Res}\\left(\\frac{f'}{f}, p\\right) = 0$$"
